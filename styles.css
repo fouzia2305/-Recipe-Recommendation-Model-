@@ -1,0 +1,65 @@
+
+/* styles.css */
+
+body{
+	background-color: #f5f5f5;
+	font-family: Arial, sans-serif;
+	color: #333;
+}
+
+h1{
+	color: #4CAF50;
+	text-align: center;
+	margin-top: 20px;
+}
+
+label{
+	font-weight: bold;
+	color: #555;
+}
+
+input, button{
+	margin: 10px 0;
+	padding:10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+button{
+	background-color: #4CAF50;
+	color: white;
+	cursor: pointer;
+}
+
+button:hover{
+	background-color: #45a049;
+}
+
+.container{
+ 	max-width: 600px;
+	margin: auto;
+	padding: 20px;
+	background-color: white;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+.recommendations ul{
+	list-style-type: none;
+	padding: 0;
+}
+
+.recommendations li{
+	margin: 10px 0;
+	padding: 15px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+    line-height: 1.5;
+}
+
+.error{
+	color: red;
+	font-weight: bold;
+	margin-top: 10px;
+}
