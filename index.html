@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Recipe Recommendations</h1>
+            <form action="/recommend" method="get">
+                <label for="recipe_name">Enter a Recipe Name:</label>
+                <input type="text" id="recipe_name" name="recipe_name" required>
+                <label for="num_recommendations">Number of Recommendations:</label>
+                <input type="number" id="num_recommendations" name="num_recommendations" value="5" required>
+                <button type="submit">Get Recommendations</button>
+            </form>
+        </header>
+
+        {% if error %}
+            <div class="error">
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+
+        {% if recommendations %}
+            <section class="recommendations">
+                <h2>Recommended Recipes:</h2>
+                <ul>
+                    {% for rec in recommendations %}
+                        <li>
+                            <strong>{{ rec['recipe_name'] }}</strong><br>
+                            Cuisine: {{ rec['cuisine_label'] }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% endif %}
+    </div>
+</body>
+</html>
